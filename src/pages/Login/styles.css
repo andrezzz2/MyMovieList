@@ -1,0 +1,99 @@
+.Login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../imgs/kimetsu.png");
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+
+    border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+.LoginTitle{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.6rem;
+    font-family: monospace;
+    text-align: center;
+}
+
+.FormInput{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 0.2rem 0;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+}
+
+.FormIcon{
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.2rem;
+}
+
+input{
+    border: 0;
+    flex: 1;
+    height: 1.5rem;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.ForgotPassword{
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.ForgotPassword span{
+    cursor: pointer;
+}
+
+.LoginButton{
+    width: 100%;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #533D8B;
+    padding: 0.3rem;
+    border: 0;
+    border-radius: 0.2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.LoginButton:hover{
+    background-color: #857DB8;
+}
+
+.Providers{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.Providers img{
+    margin-left: 0.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}

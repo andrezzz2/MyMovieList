@@ -1,0 +1,162 @@
+.NavBar{
+    position: sticky;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.UserContainer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+.UserContainer img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+
+    margin-right: 0.2rem;
+    transition: all 200ms;
+    cursor: pointer;
+}
+.UserContainer img:hover{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+}
+
+.UserContainer span{
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    margin-left: 0.2rem;
+    cursor: pointer;
+}
+.UserContainer span::after{
+    content: "";
+    visibility: hidden;
+    border-bottom: 1px solid white;
+    width: 0%;
+    transition: all 200ms;
+}
+.UserContainer span:hover::after{
+    visibility: visible;
+    width: 100%;
+}
+
+.NavContainer{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.NavContainer .Option{
+
+    width: 4rem;
+    height: 1.1rem;
+
+    background: transparent;
+
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; 
+    margin: 0.1rem;
+    padding: 0.5rem;
+
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+
+
+.NavContainer .Option:hover{
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    padding: 1rem;
+    top: 40%;
+    left: 40%;
+    transform: scale(0);
+    transition: transform 200ms;
+
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+
+    border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+
+#closeProfile{
+    float: right;
+    background-color: red;
+    color: white;
+    border: 0;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+#closeProfile:hover{
+    background-color: white;
+    color: red;
+}
+
+#profile .FormContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+#profile .FormContainer input{
+    padding: 0.2rem;
+    border-radius: 0.1rem;
+}
+
+#saveButton{
+    background-color: var(--mainBackgroundColor);
+    width: 100%;
+    font-size: 1.1rem;
+    color: white;
+    background-color: green;
+    padding: 0.3rem;
+    border: 0;
+    border-radius: 0.2rem;
+    transition: all 200ms;
+    cursor: pointer;
+}
+#saveButton:hover {
+    background-color: white;
+    color: green;
+}

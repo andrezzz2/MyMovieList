@@ -1,0 +1,226 @@
+.Lists{
+    width: 70%;
+    height: 100%;
+    min-width: 390px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: auto;
+
+    background: rgba(117, 7, 167, 0.202);
+    backdrop-filter: blur(5px);
+}
+
+.ListsMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ListsBox{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.ListTitle{
+    width: 100%;
+    font-size: 1.2Rem;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+
+.ListContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.ListContainer::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.AddTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddTitleBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 7rem;
+    height: 10rem;
+    border: 1px solid white;
+}
+
+.AddTitleBox span{
+    font-size: 1.1rem;
+    max-width: 9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.AddTitleBox img{
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+.Title[clicked="false"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 10rem;
+}
+
+.Title[clicked="true"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 400ms, height 400ms; 
+    z-index: 99999;
+
+}
+
+.Title[clicked="false"] .TitleBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 10rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: all 200ms;   
+}
+
+.Title[clicked="true"] .TitleBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20rem;
+    height: 30rem;
+    margin: 0;
+    padding: 0;
+    cursor: initial;
+    transition: all 200ms;  
+
+    background: black;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.Title[clicked="true"] .TitleBox div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Title[clicked="false"] .TitleBox span{
+    display: none;
+}
+
+.Title[clicked="true"] .TitleBox span{
+    display: block;
+    background: white;
+    color: black;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.2rem;
+    margin: 0.5rem 0.3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.Title[clicked="false"] .TitleBox img{
+    object-fit: contain;
+    width: 8rem;
+    height: 10rem;
+    margin: 0;
+}
+
+.Title[clicked="true"] .TitleBox img{
+    object-fit: contain;
+    width: 16rem;
+    height: 20rem;
+    margin: 0;
+}
+
+.Title[clicked="false"] .TitleBox p{
+    display: none;
+}
+
+.Title[clicked="true"] .TitleBox p{
+    display: block;
+    white-space: normal;
+    font-size: 0.9rem;
+    margin: 0.2rem 1rem;
+}
+
+.CreateAListBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    border: 1px solid white;
+}
+
+.CreateAListBox span{
+    font-size: 1rem;
+}
+
+.CreateAListBox img{
+    width: 8.5rem;
+    height: 8.5rem;
+    cursor: pointer;
+}
+
+.Unvisible{
+    position: absolute;
+    bottom: 0%;
+    transform: scale(0);
+    width: 100%;
+    height: 30%;
+    border: 1px solid white;
+}
+
+.SearchTitlesMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    background:black;
+}
+
+.SearchTitlesContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}

@@ -1,0 +1,23 @@
+.Home{
+    width: 70%;
+    height: 100%;
+    min-width: 390px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    background: rgba(117, 7, 167, 0.202);
+    backdrop-filter: blur(5px);
+}
+
+main{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+}

@@ -95,8 +95,12 @@ function MyLists({ User, setUser}) {
     }
 
     function createAList() {
-        const value = prompt("Enter the list name");
-        addATitle(value);
+        if(User.uid){
+            const value = prompt("Enter the list name");
+            addATitle(value);
+        } else {
+            alert("BD is offline");
+        }
     }
 
     function searchTitles(){

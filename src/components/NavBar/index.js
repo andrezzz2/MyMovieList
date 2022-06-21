@@ -80,7 +80,7 @@ function NavBar({ User, setUser }) {
         <div className="NavBar">
 
             <div className="UserContainer">
-                <img alt="user icon" src={User.photoURL?User.photoURL:''} onClick={popUpProfile}></img>
+                <img alt="user icon" src={User?.photoURL?User.photoURL:''} onClick={popUpProfile}></img>
                 <span onClick={logOut}>LogOut</span>
             </div>
 
@@ -99,17 +99,17 @@ function NavBar({ User, setUser }) {
 
                 <div className='FormContainer'>
                     <span>Edit your name</span>
-                    <input id="newUsername" placeholder={User.name?User.name:""}></input>
+                    <input id="newUsername" placeholder={User?.name?User.name:""}></input>
                 </div>
                 
                 <div className='FormContainer'>
                     <span>Edit your email</span>
-                    <input id="newEmail"placeholder={User.email?User.email:""}></input>
+                    <input id="newEmail"placeholder={User?.email?User.email:""}></input>
                 </div>
                 
                 <div className='FormContainer'>
                     <span>Edit your phone number </span>
-                    <input id="newPhoneNumber" placeholder={User.phoneNumber?User.phoneNumber:""}></input>
+                    <input id="newPhoneNumber" placeholder={User?.phoneNumber?User.phoneNumber:""}></input>
                 </div>
                 
                 <button id="saveButton" onClick={updateProfile}>Save</button>

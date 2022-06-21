@@ -35,8 +35,8 @@ function App() {
             setActualPage(<div>loading...</div>);
 
         else if(currentUser){
-
-            savingUserInDB();
+            if(currentUser)
+                savingUserInDB();
 
         } else {
 
@@ -93,6 +93,16 @@ function App() {
     
             }
     
+        }).catch(error=>{
+            //BD não está disponível mas vou deixar passar mesmo assim, já que única coisa que vai poder fazer é visualizar os títulos
+            console.error(error.message);
+
+            setActualPage(
+                <div className='App'>
+                    <PagesRouter User={User} setUser={setUser}/>
+                </div>
+            );
+
         });
     
     }

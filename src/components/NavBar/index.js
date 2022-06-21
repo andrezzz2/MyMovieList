@@ -8,8 +8,12 @@ function NavBar({ User, setUser }) {
 
     function popUpProfile() {
 
-        const profile = document.getElementById("profile");
-        profile.style.transform = "scale(1)";
+        if(User.uid){
+            const profile = document.getElementById("profile");
+            profile.style.transform = "scale(1)";
+        } else {
+            alert("BD is offline");
+        }
         
     }
 

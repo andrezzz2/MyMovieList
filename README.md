@@ -1,1 +1,2 @@
-Projeto feito com React and firebase(for authentication)
+Projeto feito com React, firebase para autenticaçao e Axios para consumo das APIs.
+

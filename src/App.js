@@ -13,7 +13,7 @@ const base_API_URL = "http://localhost:5353";
 
 function App() {
 
-    const [User, setUser] = useState({});
+    const [User, setUser] = useState(null);
     const [currentUser, setCurrentUser] = useState("loading");
     const [actualPage, setActualPage] = useState(<></>);
 
@@ -35,8 +35,8 @@ function App() {
             setActualPage(<div>loading...</div>);
 
         else if(currentUser){
-            if(currentUser)
-                savingUserInDB();
+
+            savingUserInDB();
 
         } else {
 
@@ -97,11 +97,7 @@ function App() {
             //BD não está disponível mas vou deixar passar mesmo assim, já que única coisa que vai poder fazer é visualizar os títulos
             console.error(error.message);
 
-            setActualPage(
-                <div className='App'>
-                    <PagesRouter User={User} setUser={setUser}/>
-                </div>
-            );
+            setUser({BD: false});
 
         });
     

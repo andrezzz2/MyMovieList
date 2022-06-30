@@ -1,6 +1,7 @@
 import './styles.css';
 import { getAuth, signOut } from "firebase/auth";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const base_API_URL = "http://localhost:5353";
 
@@ -85,11 +86,9 @@ function NavBar({ User, setUser }) {
             </div>
 
             <div className="NavContainer">
-
-                <a className="Option" href="/">Home</a>
-                <a className="Option" href="/MyLists">MyLists</a>
-                <a className="Option" href="/Titles">Titles</a>
-
+                <a className="Option" href="#/">Home</a>
+                <a className="Option" href="#/MyLists">MyLists</a>
+                <a className="Option" href="#/Titles">Titles</a>
             </div>
 
             

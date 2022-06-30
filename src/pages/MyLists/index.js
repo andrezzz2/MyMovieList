@@ -210,8 +210,10 @@ function MyLists({ User, setUser}) {
                                     return (
 
                                         <article key={title._id} className='Title' clicked="false">
-                                            <span>{title.title} ({title.year})</span>
-                                            <img alt={title.title} src={title.image} onClick={()=>addThisTitle(title)}></img>
+                                            <div className="TitleBox">
+                                                <span>{title.title} ({title.year})</span>
+                                                <img alt={title.title} src={title.image} onClick={()=>addThisTitle(title)}></img>
+                                            </div>
                                         </article>
 
                                     )

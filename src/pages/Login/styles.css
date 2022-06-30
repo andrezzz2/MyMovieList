@@ -4,9 +4,6 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-image: url("../../imgs/kimetsu.png");
-    background-repeat: no-repeat;
-    object-fit: cover;
 }
 
 .Form{

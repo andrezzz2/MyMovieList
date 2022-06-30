@@ -1,10 +1,12 @@
 import './App.css';
-import PagesRouter from './pages/PagesRouter';
-import Login from './pages/Login';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import MyLists from './pages/MyLists';
+import Titles from './pages/Titles';
 
 
 
@@ -13,8 +15,8 @@ const base_API_URL = "http://localhost:5353";
 
 function App() {
 
-    const [User, setUser] = useState(null);
-    const [currentUser, setCurrentUser] = useState("loading");
+    const [User, setUser] = useState({loading: true});
+    const [currentUser, setCurrentUser] = useState(null);
     const [actualPage, setActualPage] = useState(<></>);
 
     const auth = getAuth();
@@ -31,16 +33,13 @@ function App() {
     //gerenciador da alteração do usuário atual
     useEffect(()=>{
 
-        if(currentUser==="loading")
-            setActualPage(<div>loading...</div>);
-
-        else if(currentUser){
+        if(currentUser){
 
             savingUserInDB();
 
         } else {
 
-            setUser(null);
+            setUser({needToLogin: true});
 
         }
         
@@ -50,15 +49,14 @@ function App() {
     //trocar a pagina quando meu state User troca
     useEffect(()=>{
 
-        if(User){
-            
+        if(User.loading){
             setActualPage(
                 <div className='App'>
-                    <PagesRouter User={User} setUser={setUser}/>
+                    <p>Loading...</p>
                 </div>
             );
 
-        } else {
+        } else if(User.needToLogin){
 
             setActualPage(
                 <div className='App'>
@@ -66,6 +64,21 @@ function App() {
                 </div>
             );
 
+        } else {
+
+            setActualPage(
+                <div className='App'>
+                    <HashRouter basename='/'>
+
+                        <Routes>
+                            <Route element={ <Home User={User} setUser={setUser}/> }  path="/"/>
+                            <Route element={ <MyLists User={User} setUser={setUser}/> }  path="/MyLists"/>
+                            <Route element={ <Titles User={User} setUser={setUser}/> }  path="/Titles"/>
+                        </Routes>
+                    
+                    </HashRouter>
+                </div>
+            );
         }
 
     }, [User]);
@@ -73,7 +86,9 @@ function App() {
 
 
     function savingUserInDB(){
-        
+
+        setUser({loading: true});
+
         const newUser = {
             uid: currentUser.uid,
             name: currentUser.displayName,
@@ -97,7 +112,7 @@ function App() {
             //BD não está disponível mas vou deixar passar mesmo assim, já que única coisa que vai poder fazer é visualizar os títulos
             console.error(error.message);
 
-            setUser({BD: false});
+            setUser({});
 
         });
     
@@ -110,7 +125,7 @@ function App() {
             if(response.data)
                 setUser(response.data);
             else
-                console.error("Server can't catch the user infos");
+                alert("Server can't catch the user infos, try it later");
                 
         })
 

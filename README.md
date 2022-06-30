@@ -5,6 +5,3 @@ npm i
 
 Iniciar sistema:
 npm start
-
-Gerar arquivos estáticos:
-npm run build
